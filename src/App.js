@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from "react-dom";
 import { ethers, BrowserProvider } from 'ethers';
 import LirABI from './LirABI.json';
 import './App.css';
+import QRCode from "react-qr-code";
 
 function App() {
   const [provider, setProvider] = useState(null);
@@ -15,6 +17,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [events, setEvents] = useState([]);
   
+
   // Замените на ваш адрес контракта после деплоя
   const contractAddress = "0xb52A32809Bbf575D07fc2879e1Ab9e1192b87a2B";
 
@@ -192,6 +195,12 @@ function App() {
           <div className="dashboard">
             <div className="account-info">
               <h2>Account Information</h2>
+              <QRCode
+                size={256}
+                style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                value={account}
+                viewBox={`0 0 256 256`}
+              />
               <p><strong>Address:</strong> {shortenAddress(account)}</p>
               <p><strong>Your balance:</strong> {balance} LIR</p>
               <p><strong>Contract balance:</strong> {contractBalance} LIR</p>
