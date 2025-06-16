@@ -19,7 +19,7 @@ function App() {
   
 
   // Замените на ваш адрес контракта после деплоя
-  const contractAddress = "0xb52A32809Bbf575D07fc2879e1Ab9e1192b87a2B";
+  const contractAddress = "0xA91461c7C857266565e35A026aeb0b5c4Ec94C16";
 
   // Подключение кошелька
   const connectWallet = async () => {
@@ -197,7 +197,7 @@ function App() {
               <h2>Account Information</h2>
               <QRCode
                 size={256}
-                style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                style={{ height: "auto", maxWidth: "100%", width: "25%" }}
                 value={account}
                 viewBox={`0 0 256 256`}
               />
